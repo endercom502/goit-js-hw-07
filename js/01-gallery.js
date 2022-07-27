@@ -1,10 +1,27 @@
-import { galleryItems } from './gallery-items.js';
-// Change code below this line
+import { galleryItems } from "./gallery-items.js";
+<----------------gallery--------------->
+const galleryContainer = document.querySelector(".gallery");
+const arrayLink = galleryElements(galleryItems);
+galleryContainer.insertAdjacentHTML("beforeend", arrayLink);
+galleryContainer.addEventListener("click", onModalPictureClick);
 
-    const ulId = document.querySelector(".gallery");
-     const arrayLink = `${galleryItems.map((item) => `<div><img src=${item.preview} alt=${item.description}/></div>`)}`;
-       let sum = 0;
-       sum += ulId.insertAdjacentHTML("afterbegin", arrayLink);
-         
-   
+function galleryElements(pictureList) {
+  return pictureList
+    .map(({ preview, original, description }) => {
+      return `
+    <div class="gallery__item">
+    <a class="gallery__link" href="${original}" onclick="return false;">
+    <img 
+    class="gallery__image"
+    src="${preview}"
+    data-source="${original}"
+    alt="${description}"
+    />
+    </a>
+    </div>
+    `;
+    })
+    .join("");
+}
+
 console.log(galleryItems);
