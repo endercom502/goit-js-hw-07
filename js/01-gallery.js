@@ -10,7 +10,7 @@ function galleryElements(pictureList) {
     .map(({ preview, original, description }) => {
       return `
     <div class="gallery__item">
-    <a class="gallery__link" href="${original}" onclick="return false;">
+    <a class="gallery__link" href="${original}" onclick="return false" keyboard = "return false">
     <img 
     class="gallery__image"
     src="${preview}"
@@ -43,4 +43,9 @@ function modalCreate(event) {
   );
   galleryContainer.onclick = modalOpen.show();
 }
+// <---------------esc-close------------>
+// modalCreate.addEventListener(keydown, (e) => {
+//   console.log("code:27", e.);
+//   galleryContainer.keyboard = modalOpen.close();
+// });
 // console.log(galleryItems);
