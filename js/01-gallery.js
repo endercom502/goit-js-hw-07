@@ -43,9 +43,3 @@ function modalCreate(event) {
   );
   galleryContainer.onclick = modalOpen.show();
 }
-// <---------------esc-close------------>
-// modalCreate.addEventListener(keydown, (e) => {
-//   console.log("code:27", e.);
-//   galleryContainer.keyboard = modalOpen.close();
-// });
-// console.log(galleryItems);
